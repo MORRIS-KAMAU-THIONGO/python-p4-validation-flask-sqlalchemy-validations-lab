@@ -20,7 +20,6 @@ class Author(db.Model):
         existing_author = Author.query.filter(Author.name == name).first()
         if existing_author and existing_author.id != self.id:
             raise ValueError("Author name must be unique")
-        
         return name
 
     @validates('phone_number')
